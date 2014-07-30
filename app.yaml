@@ -1,0 +1,14 @@
+application: twitterbellingbot
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /.*
+  script: bellingbot.application
+  login: admin
+  
+libraries:
+- name: ssl
+  version: latest

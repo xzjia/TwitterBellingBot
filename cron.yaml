@@ -1,0 +1,4 @@
+cron:
+- description: every hour
+  url: /BellingBot
+  schedule: every 1 hours synchronized
