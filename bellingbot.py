@@ -34,7 +34,9 @@ class BellingBot(webapp2.RequestHandler):
 
         readable_time = t.strftime('%Y-%m-%d %H:%M')
         saying = "It's now " + readable_time + " in Tokyo."
-        return saying + " Here comes the (be) bellingS (careful): " + ringing 
+        status = saying + " " + ringing
+        # self.response.write(len(status))
+        return status
 
     def tweet(self, status):
         CONSUMER_KEY = keys['consumer_key']
@@ -50,7 +52,8 @@ class BellingBot(webapp2.RequestHandler):
     def get(self):
         status = self.generate()
         self.tweet(status)
-        self.response.write(status)
+        # for debugging at localhost
+        # self.response.write(status)
 
 
 class MainPage(webapp2.RequestHandler):
