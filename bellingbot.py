@@ -49,7 +49,7 @@ class BellingBot(webapp2.RequestHandler):
     
     def get(self):
         status = self.generate()
-        # self.tweet(status)
+        self.tweet(status)
         self.response.write(status)
 
 
